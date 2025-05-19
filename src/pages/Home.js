@@ -135,7 +135,7 @@ const Home = () => {
             muted 
             playsInline 
             style={{
-              filter: 'brightness(0.9) contrast(1.1)',
+              filter: 'brightness(1.9) contrast(1.1)',
             }}
           >
             <source src={video} type="video/mp4" />
