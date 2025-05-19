@@ -156,8 +156,13 @@ const ProductDetails = () => {
     // Format phone number
     const phone = product.contactNumber.replace(/\s+/g, '').replace('+', '');
     
-    // Create WhatsApp link using web URL
-    const whatsappLink = `https://web.whatsapp.com/send?phone=91${phone}&text=${encodeURIComponent(whatsappMessage)}`;
+    // Detect if mobile device
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    
+    // Create appropriate WhatsApp link based on device
+    const whatsappLink = isMobile 
+      ? `https://wa.me/${phone}?text=${encodeURIComponent(whatsappMessage)}`
+      : `https://web.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(whatsappMessage)}`;
     
     // Open WhatsApp in new tab
     window.open(whatsappLink, '_blank');

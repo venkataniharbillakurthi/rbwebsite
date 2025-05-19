@@ -108,10 +108,15 @@ const Contact = () => {
     // Format phone number
     const phone = OWNER_CONTACT.replace(/\s+/g, '').replace('+', '');
     
-    // Create WhatsApp Web link
-    const whatsappLink = `https://web.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(whatsappMessage)}`;
+    // Detect if mobile device
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     
-    // Open WhatsApp Web in new tab
+    // Create appropriate WhatsApp link based on device
+    const whatsappLink = isMobile 
+      ? `https://wa.me/${phone}?text=${encodeURIComponent(whatsappMessage)}`
+      : `https://web.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(whatsappMessage)}`;
+    
+    // Open WhatsApp in new tab
     window.open(whatsappLink, '_blank');
     
     // Show success message
