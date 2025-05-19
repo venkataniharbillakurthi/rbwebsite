@@ -7,6 +7,8 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import ProductDetails from './pages/ProductDetails';
 import { styled } from '@mui/material/styles';
+import { Footer } from './pages/Home';
+
 
 const StyledContainer = styled('div')({
   minHeight: '100vh',
@@ -26,6 +28,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/product/:id" element={<ProductDetails />} />
         </Routes>
+        <Footer />
       </StyledContainer>
     </Router>
   );

@@ -6,6 +6,10 @@ import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import video from '../images/video.mp4';
+import dryFruitImg from '../images/dry-fruit-puth.jpg';
+import mangoJellyImg from '../images/mango-jelly.jpg';
+import palmyraJellyImg from '../images/palmyra-jelly.jpg';
 
 const StyledHero = styled(Box)({
   minHeight: '80vh',
@@ -96,7 +100,7 @@ const products = [
     name: 'Dry Fruit Putharekulu',
     description: 'Traditional Andhra sweet made with dry fruits and rice flakes',
     price: 250,
-    image: '/images/dry-fruit-puth.jpg',
+    image: dryFruitImg,
     details: 'A rich and delicious variation of Putharekulu made with premium dry fruits. Perfect for gifting and special occasions.',
     contactNumber: '+91 8328657726'
   },
@@ -105,7 +109,7 @@ const products = [
     name: 'Mango Jelly',
     description: 'Fresh mango jelly made with natural ingredients',
     price: 150,
-    image: '/images/mango-jelly.jpg',
+    image: mangoJellyImg,
     details: 'A refreshing mango jelly made with fresh mango pulp and natural flavors. Ideal for summer.',
     contactNumber: '+91 8328657726'
   },
@@ -114,7 +118,7 @@ const products = [
     name: 'Palmyra Jelly',
     description: 'Natural Palmyra palm jelly',
     price: 180,
-    image: '/images/palmyra-jelly.jpg',
+    image: palmyraJellyImg,
     details: 'A traditional Andhra delicacy made from Palmyra palm sap. Perfect for health-conscious sweet lovers.',
     contactNumber: '+91 8328657726'
   }
@@ -134,7 +138,7 @@ const Home = () => {
               filter: 'brightness(0.9) contrast(1.1)',
             }}
           >
-            <source src="/images/video.mp4" type="video/mp4" />
+            <source src={video} type="video/mp4" />
           </video>
         <Box sx={{ position: 'relative', zIndex: 2 }}>
           <motion.div
@@ -361,4 +365,34 @@ const Home = () => {
   );
 };
 
-export default Home;
+// Add this Footer component just before export
+export const Footer = () => (
+  <Box
+    sx={{
+      width: '100%',
+      py: 3,
+      mt: 8,
+      background: 'linear-gradient(90deg, #c3cfe2 0%, #f5f7fa 100%)',
+      textAlign: 'center',
+      color: '#1a237e',
+      fontWeight: 500,
+      fontSize: { xs: '1rem', md: '1.1rem' },
+      borderTopLeftRadius: '20px',
+      borderTopRightRadius: '20px',
+      boxShadow: '0 -2px 8px rgba(0,0,0,0.05)'
+    }}
+  >
+    © {new Date().getFullYear()} Regional Bites. All rights reserved.
+  </Box>
+);
+
+
+// Update Home to include Footer
+const HomeWithFooter = () => (
+  <>
+    <Home />
+    
+  </>
+);
+
+export default HomeWithFooter;

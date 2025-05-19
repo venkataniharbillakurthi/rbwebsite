@@ -10,9 +10,12 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import Paper from '@mui/material/Paper';
 import { useParams } from 'react-router-dom';
 import Grid from '@mui/material/Grid';
+import dryFruitImg from '../images/dry-fruit-puth.jpg';
+import mangoJellyImg from '../images/mango-jelly.jpg';
+import palmyraJellyImg from '../images/palmyra-jelly.jpg';
 
 
-const OWNER_CONTACT = '+91 8328657726';
+const OWNER_CONTACT = '9652739518';
 
 const products = [
   {
@@ -20,7 +23,7 @@ const products = [
     name: 'Dry Fruit Putharekulu',
     description: 'Traditional Andhra sweet made with dry fruits and rice flakes',
     price: 250,
-    image: '/images/dry-fruit-puth.jpg',
+    image: dryFruitImg,
     details: 'A rich and delicious variation of Putharekulu made with premium dry fruits. Perfect for gifting and special occasions.',
     contactNumber: OWNER_CONTACT
   },
@@ -29,7 +32,7 @@ const products = [
     name: 'Mango Jelly',
     description: 'Fresh mango jelly made with natural ingredients',
     price: 150,
-    image: '/images/mango-jelly.jpg',
+    image: mangoJellyImg,
     details: 'A refreshing mango jelly made with fresh mango pulp and natural flavors. Ideal for summer.',
     contactNumber: OWNER_CONTACT
   },
@@ -38,7 +41,7 @@ const products = [
     name: 'Palmyra Jelly',
     description: 'Natural Palmyra palm jelly',
     price: 180,
-    image: '/images/palmyra-jelly.jpg',
+    image: palmyraJellyImg,
     details: 'A traditional Andhra delicacy made from Palmyra palm sap. Perfect for health-conscious sweet lovers.',
     contactNumber: OWNER_CONTACT
   }
@@ -150,11 +153,17 @@ const ProductDetails = () => {
       `Product: ${product.name}\n` +
       `Message: ${formData.message}`;
     
-    // Create WhatsApp link
-    const whatsappLink = `https://wa.me/${product.contactNumber.replace(/\s+/g, '')}?text=${encodeURIComponent(whatsappMessage)}`;
+    // Format phone number
+    const phone = product.contactNumber.replace(/\s+/g, '').replace('+', '');
     
-    // Open WhatsApp in new tab
+    // Create WhatsApp Web link
+    const whatsappLink = `https://web.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(whatsappMessage)}`;
+    
+    // Open WhatsApp Web in new tab
     window.open(whatsappLink, '_blank');
+    
+    // Show success message
+    alert('Please check your WhatsApp Web and copy the message.\nThank you for your message! We will get back to you soon.');
     
     // Reset form
     setFormData({

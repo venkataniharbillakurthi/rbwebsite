@@ -6,6 +6,9 @@ import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import { motion } from 'framer-motion';
 import ProductCard from '../components/ProductCard';
+import dryFruitImg from '../images/dry-fruit-puth.jpg';
+import mangoJellyImg from '../images/mango-jelly.jpg';
+import palmyraJellyImg from '../images/palmyra-jelly.jpg';
 
 const StyledSection = styled(Box)({
   padding: '4rem 0',
@@ -40,21 +43,21 @@ const products = [
     name: 'Dry Fruit Putharekulu',
     description: 'Traditional Andhra sweet made with dry fruits and rice flakes',
     price: 250,
-    image: '/images/dry-fruit-puth.jpg'
+    image: dryFruitImg,
   },
   {
     id: 2,
     name: 'Mango Jelly',
     description: 'Fresh mango jelly made with natural ingredients',
     price: 150,
-    image: '/images/mango-jelly.jpg'
+    image: mangoJellyImg
   },
   {
     id: 3,
     name: 'Palmyra Jelly',
     description: 'Natural Palmyra palm jelly',
     price: 180,
-    image: '/images/palmyra-jelly.jpg'
+    image: palmyraJellyImg
   },
 ];
 

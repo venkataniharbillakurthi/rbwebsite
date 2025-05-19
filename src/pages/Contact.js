@@ -9,7 +9,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import PhoneIcon from '@mui/icons-material/Phone';
 import Paper from '@mui/material/Paper';
 
-const OWNER_CONTACT = '+91 8328657726';
+const OWNER_CONTACT = '9652739518';
 
 const StyledSection = styled(Box)({
   padding: '4rem 0',
@@ -105,11 +105,17 @@ const Contact = () => {
       `Phone: ${formData.phone}\n` +
       `Message: ${formData.message}`;
     
-    // Create WhatsApp link
-    const whatsappLink = `https://wa.me/${OWNER_CONTACT.replace(/\s+/g, '')}?text=${encodeURIComponent(whatsappMessage)}`;
+    // Format phone number
+    const phone = OWNER_CONTACT.replace(/\s+/g, '').replace('+', '');
     
-    // Open WhatsApp in new tab
+    // Create WhatsApp Web link
+    const whatsappLink = `https://web.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(whatsappMessage)}`;
+    
+    // Open WhatsApp Web in new tab
     window.open(whatsappLink, '_blank');
+    
+    // Show success message
+    alert('Please check your WhatsApp Web and copy the message.\nThank you for your message! We will get back to you soon.');
     
     // Reset form
     setFormData({
