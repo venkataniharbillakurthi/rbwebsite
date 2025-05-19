@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/rbwebsite/static/css/main.e6c13ad2.css",
-    "main.js": "/rbwebsite/static/js/main.4687b6ec.js",
+    "main.js": "/rbwebsite/static/js/main.97b48967.js",
     "static/js/453.c5e79882.chunk.js": "/rbwebsite/static/js/453.c5e79882.chunk.js",
     "static/media/video.mp4": "/rbwebsite/static/media/video.e555de3b0ab230d8bd3d.mp4",
     "static/media/dry-fruit-puth.jpg": "/rbwebsite/static/media/dry-fruit-puth.04f4787e2891800bfc1a.jpg",
@@ -9,11 +9,11 @@
     "static/media/mango-jelly.jpg": "/rbwebsite/static/media/mango-jelly.dbbb126987fa01782908.jpg",
     "index.html": "/rbwebsite/index.html",
     "main.e6c13ad2.css.map": "/rbwebsite/static/css/main.e6c13ad2.css.map",
-    "main.4687b6ec.js.map": "/rbwebsite/static/js/main.4687b6ec.js.map",
+    "main.97b48967.js.map": "/rbwebsite/static/js/main.97b48967.js.map",
     "453.c5e79882.chunk.js.map": "/rbwebsite/static/js/453.c5e79882.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.4687b6ec.js"
+    "static/js/main.97b48967.js"
   ]
 }
