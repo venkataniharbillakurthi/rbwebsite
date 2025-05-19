@@ -156,14 +156,11 @@ const ProductDetails = () => {
     // Format phone number
     const phone = product.contactNumber.replace(/\s+/g, '').replace('+', '');
     
-    // Create WhatsApp Web link
-    const whatsappLink = `https://web.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(whatsappMessage)}`;
+    // Create WhatsApp link using web URL
+    const whatsappLink = `https://web.whatsapp.com/send?phone=91${phone}&text=${encodeURIComponent(whatsappMessage)}`;
     
-    // Open WhatsApp Web in new tab
+    // Open WhatsApp in new tab
     window.open(whatsappLink, '_blank');
-    
-    // Show success message
-    alert('Please check your WhatsApp Web and copy the message.\nThank you for your message! We will get back to you soon.');
     
     // Reset form
     setFormData({
